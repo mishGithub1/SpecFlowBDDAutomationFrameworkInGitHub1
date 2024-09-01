@@ -4,6 +4,7 @@ using BoDi;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Edge;
+using OpenQA.Selenium.Firefox;
 using SpecFlowBDDAutomationFramework.Utility;
 
 namespace SpecFlowBDDAutomationFramework.Hooks
@@ -59,10 +60,15 @@ namespace SpecFlowBDDAutomationFramework.Hooks
             //options.AddArgument("--headless");
             //IWebDriver driver = new ChromeDriver(options);
             //driver.Manage().Window.Maximize();
-            EdgeOptions options = new EdgeOptions();
-            options.AddArgument("headless");
-            options.AddArgument("disable-gpu");
-            IWebDriver driver = new EdgeDriver(options);
+
+            //EdgeOptions options = new EdgeOptions();
+            //options.AddArgument("headless");
+            //options.AddArgument("disable-gpu");
+            //IWebDriver driver = new EdgeDriver(options);
+
+            FirefoxOptions options = new FirefoxOptions();
+            options.AddArguments("--headless");
+            IWebDriver driver = new FirefoxDriver(options);
             driver.Manage().Window.Maximize();
 
             _container.RegisterInstanceAs<IWebDriver>(driver);
