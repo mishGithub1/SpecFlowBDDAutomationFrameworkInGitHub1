@@ -3,6 +3,7 @@ using AventStack.ExtentReports.Gherkin.Model;
 using BoDi;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Edge;
 using SpecFlowBDDAutomationFramework.Utility;
 
 namespace SpecFlowBDDAutomationFramework.Hooks
@@ -54,9 +55,14 @@ namespace SpecFlowBDDAutomationFramework.Hooks
         public void FirstBeforeScenario(ScenarioContext scenarioContext)
         {
             Console.WriteLine("Running before scenario...");
-            ChromeOptions options = new ChromeOptions();
-            options.AddArgument("--headless");
-            IWebDriver driver = new ChromeDriver(options);
+            //ChromeOptions options = new ChromeOptions();
+            //options.AddArgument("--headless");
+            //IWebDriver driver = new ChromeDriver(options);
+            //driver.Manage().Window.Maximize();
+            EdgeOptions options = new EdgeOptions();
+            options.AddArgument("headless");
+            options.AddArgument("disable-gpu");
+            IWebDriver driver = new EdgeDriver(options);
             driver.Manage().Window.Maximize();
 
             _container.RegisterInstanceAs<IWebDriver>(driver);
