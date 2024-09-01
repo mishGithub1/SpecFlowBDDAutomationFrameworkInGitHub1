@@ -5,7 +5,6 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
 	<PublishChromeDriver>true</PublishChromeDriver>
-	<PublishMsEdgeDriver>true</PublishMsEdgeDriver>
   </PropertyGroup>
 
   <ItemGroup>
