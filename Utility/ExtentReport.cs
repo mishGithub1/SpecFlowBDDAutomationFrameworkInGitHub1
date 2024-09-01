@@ -17,7 +17,7 @@ namespace SpecFlowBDDAutomationFramework.Utility
         public static ExtentTest _scenario;
 
         public static String dir = AppDomain.CurrentDomain.BaseDirectory;
-        public static String testResultPath = dir.Replace("bin\\Debug\\net6.0", "TestResults");
+        public static String testResultPath = dir.Replace("bin\\Debug\\net6.0", "Report");
 
         public static void ExtentReportInit()
         {
